@@ -27,13 +27,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
     TextView tvResult;
     Button btnUpload;
+    Button btnPost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvResult = (TextView) findViewById(R.id.tv_result);
         btnUpload = (Button) findViewById(R.id.btn_upload);
+        btnPost = (Button) findViewById(R.id.btn_post);
         btnUpload.setOnClickListener(this);
+        btnPost.setOnClickListener(this);
     }
 
     private void uploadFiles() {
@@ -118,6 +121,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.btn_upload:
                 uploadFiles();
+                break;
+            case R.id.btn_post:
+                test();
                 break;
         }
     }
